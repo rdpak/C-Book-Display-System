@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <iomanip> // For setw()
+#include <iomanip>
 
-// Define a Book class
 class Book {
 public:
     std::string title;
@@ -18,7 +17,6 @@ int main() {
     std::string title, author;
     int year;
 
-    // Prompt the user to enter books until '0' is entered
     while (true) {
         std::cout << "Enter book title (enter '0' to stop): ";
         std::getline(std::cin, title);
@@ -29,12 +27,11 @@ int main() {
         std::getline(std::cin, author);
         std::cout << "Enter year: ";
         std::cin >> year;
-        std::cin.ignore(); // Ignore the newline character left in the stream
+        std::cin.ignore();
 
         books.push_back(Book(title, author, year));
     }
 
-    // Display all the books in a formatted table
     std::cout << std::setw(30) << std::left << "Title"
               << std::setw(30) << std::left << "Author"
               << std::setw(10) << std::left << "Year" << std::endl;
